@@ -1,0 +1,40 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenido{
+    margin-top: 5rem;
+}
+
+.formulario{
+    
+    &__campo{
+       margin-bottom: 2rem;
+
+       &:last-of-type{
+        margin-bottom: 0;
+       }
+    }
+
+    label{
+        display: block;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    input{
+        width: 100%;
+        border: .4rem solid v.$primario;
+        @include m.tablet{ 
+            width: auto;
+        }
+    }
+
+    input[type="submit"]{
+        @include m.boton(v.$primario, v.$blanco);
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
